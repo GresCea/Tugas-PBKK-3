@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="page-card agent-card">
-<a class="back-link" href="{{ route('home') }}">← Kembali ke beranda</a>
+    <a class="back-link" href="{{ route('home') }}">← Kembali ke beranda</a>
     <span class="eyebrow">Hitung-IPK</span>
 
     <h1>Kalkulator IPK</h1>

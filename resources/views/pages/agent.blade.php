@@ -4,12 +4,10 @@
 
 @section('content')
     <section class="page-card agent-card">
-    <a class="back-link" href="{{ route('home') }}">← Kembali ke beranda</a>
+        <a class="back-link" href="{{ route('home') }}">← Kembali ke beranda</a>
         <span class="eyebrow">IDE-RISET</span>
         <h1>System Log Anomaly Detection Agent</h1>
         <p class="lead">Platform Agentic AI untuk memantau, menganalisis, dan mendeteksi anomali pada system log secara otomatis.</p>
-
-        <x-status-banner message="Ruang riset siap dijelajahi." />
 
         <section class="idea-box">
             <span class="eyebrow">ALUR KERJA</span>

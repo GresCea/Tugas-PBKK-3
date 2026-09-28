@@ -4,7 +4,7 @@
 
 @section('content')
     <section class="page-card">
-    <a class="back-link" href="{{ route('home') }}">← Kembali ke beranda</a>
+        <a class="back-link" href="{{ route('home') }}">← Kembali ke beranda</a>
         <span class="eyebrow">PROFIL MAHASISWA</span>
         <h1>{{ $student['nama'] }}</h1>
         <p class="lead">Informasi akademik dan kontak mahasiswa.</p>

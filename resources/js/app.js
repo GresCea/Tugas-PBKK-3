@@ -3,7 +3,9 @@ const themeToggle = document.querySelector('#theme-toggle');
 if (themeToggle) {
 	const savedTheme = window.localStorage.getItem('theme');
 	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-	const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+	const routeTheme = document.body.dataset.routeTheme;
+	const isRouteDark = routeTheme === 'dark';
+	const isDark = isRouteDark || (savedTheme ? savedTheme === 'dark' : prefersDark);
 
 	document.documentElement.classList.toggle('dark', isDark);
 	document.body.classList.toggle('dark', isDark);
@@ -11,6 +13,10 @@ if (themeToggle) {
 	themeToggle.textContent = isDark ? 'Mode Terang' : 'Mode Gelap';
 
 	themeToggle.addEventListener('click', () => {
+		if (isRouteDark) {
+			return;
+		}
+
 		const nextIsDark = !document.documentElement.classList.contains('dark');
 
 		document.documentElement.classList.toggle('dark', nextIsDark);

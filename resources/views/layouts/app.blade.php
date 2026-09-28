@@ -6,7 +6,8 @@
     <title>@yield('title', config('app.name', 'Profil Mahasiswa ITS'))</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="site-shell bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+@php($isDark = $isDark ?? false)
+<body class="site-shell bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 {{ $isDark ? 'dark' : '' }}" data-route-theme="{{ $isDark ? 'dark' : 'light' }}">
     <nav class="site-nav" aria-label="Navigasi utama">
         <a class="site-brand" href="{{ route('home') }}">ITS / PBKK</a>
         <div class="site-nav-links">
@@ -14,6 +15,7 @@
             <a href="{{ route('profile') }}">Profil</a>
             <a href="{{ route('agent') }}">Ide-Riset</a>
             <a href="{{ route('gpa') }}">Hitung-IPK</a>
+            <a href="{{ route('feedback') }}">Umpan-Balik</a>
             <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">
                 Mode Gelap
             </button>
