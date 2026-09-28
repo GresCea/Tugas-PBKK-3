@@ -8,6 +8,7 @@ Cara menjalankan aplikasi:
 
 ```sh
 git clone https://github.com/GresCea/Tugas-PBKK-3.git
+cd Tugas-PBKK-3
 composer install
 npm install
 copy .env.example .env
