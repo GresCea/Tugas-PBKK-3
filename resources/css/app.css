@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -13,24 +14,24 @@ body {
     color: #172033;
 }
 
-main {
+.page-card {
     overflow: hidden;
     border-radius: 18px;
     box-shadow: 0 20px 45px rgb(15 23 42 / 12%);
 }
 
-main h1 {
+.page-card h1 {
     color: #0f172a;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.03em;
 }
 
-main p {
+.page-card p {
     line-height: 1.7;
 }
 
-main a {
+.page-card a {
     transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
@@ -49,9 +50,68 @@ main a:hover {
     background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 55%, #ecfdf5 100%);
     color: #172033;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     min-height: 100vh;
     padding: 32px 20px;
+}
+
+.site-shell.dark {
+    background: linear-gradient(135deg, #0f172a 0%, #111827 55%, #134e4a 100%);
+    color: #e2e8f0;
+}
+
+.site-nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    max-width: 960px;
+    width: 100%;
+}
+
+.site-brand,
+.site-nav-links a {
+    color: #0f766e;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-brand {
+    letter-spacing: 0.08em;
+}
+
+.site-nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.site-nav-links a:hover {
+    color: #2563eb;
+}
+
+.dark .site-brand,
+.dark .site-nav-links a {
+    color: #99f6e4;
+}
+
+.page-container {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    width: min(100%, 960px);
+}
+
+.site-footer {
+    color: #64748b;
+    font-size: 0.8rem;
+    margin-top: 28px;
+    text-align: center;
+}
+
+.dark .site-footer {
+    color: #94a3b8;
 }
 
 .page-card {
@@ -101,6 +161,120 @@ main a:hover {
     gap: 56px;
 }
 
+.profile-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 34px;
+}
+
+.info-card {
+    background: #f8fafc;
+    border: 1px solid #dbe4ee;
+    border-radius: 12px;
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+}
+
+.info-card strong {
+    color: #0f172a;
+    line-height: 1.45;
+}
+
+.dark .page-card {
+    background: rgb(15 23 42 / 94%);
+    border-color: #334155;
+}
+
+.dark .page-card h1,
+.dark .info-card strong,
+.dark .agent-section h2 {
+    color: #f8fafc;
+}
+
+.dark .lead,
+.dark .agent-section p {
+    color: #cbd5e1;
+}
+
+.dark .info-card {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+.dark .idea-box {
+    background: #1e293b;
+    border-top-color: #475569;
+    color: #e2e8f0;
+}
+
+.dark .idea-box h2 {
+    color: #f8fafc;
+}
+
+.dark .gpa-form {
+    background: #0f172a;
+    border-color: #475569;
+}
+
+.dark .gpa-form label {
+    color: #cbd5e1;
+}
+
+.dark .gpa-form input {
+    background: #1e293b;
+    border-color: #64748b;
+    color: #f8fafc;
+}
+
+.dark .gpa-form input:focus {
+    border-color: #5eead4;
+    box-shadow: 0 0 0 4px rgb(45 212 191 / 15%);
+}
+
+.dark .detail-list {
+    border-top-color: #475569;
+}
+
+.dark .detail-list dd {
+    color: #cbd5e1;
+}
+
+.dark .feature-grid article {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+.dark .feature-grid strong {
+    color: #5eead4;
+}
+
+.dark .feature-grid span {
+    color: #cbd5e1;
+}
+
+.status-banner {
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 13px 16px;
+}
+
+.status-success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+}
+
+.status-dark {
+    background: #1e293b;
+    border: 1px solid #64748b;
+    color: #ccfbf1;
+}
+
 .profile-highlight div {
     display: grid;
     gap: 8px;
@@ -137,8 +311,67 @@ main a:hover {
 }
 
 .back-link {
-    display: inline-block;
+    display: block;
     margin-bottom: 36px;
+}
+
+.gpa-form {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    display: grid;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 24px;
+}
+
+.gpa-form label {
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.gpa-form input {
+    background: #ffffff;
+    border: 2px solid #94a3b8;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #0f172a;
+    font-size: 1.1rem;
+    min-height: 52px;
+    padding: 12px 14px;
+    width: 100%;
+}
+
+.gpa-form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgb(37 99 235 / 15%);
+    outline: none;
+}
+
+.gpa-form button {
+    background: #2563eb;
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 12px;
+    min-height: 52px;
+    padding: 12px 20px;
+    transition: background-color 180ms ease, transform 180ms ease;
+    width: 100%;
+}
+
+.gpa-form button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.gpa-form button:active {
+    transform: translateY(0);
 }
 
 .detail-list {
@@ -313,8 +546,22 @@ main a:hover {
 }
 
 @media (max-width: 640px) {
+    .site-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .site-nav-links {
+        gap: 14px;
+    }
+
     .page-card {
         padding: 32px 24px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
     }
 
     .profile-highlight {

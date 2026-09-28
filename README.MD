@@ -1,4 +1,4 @@
-# Tugas-PBKK-2
+# Tugas-PBKK-3
 
 | Name           | NRP        | Kelas     |
 | ---            | ---        | ----------|
@@ -7,7 +7,7 @@
 Cara menjalankan aplikasi:
 
 ```sh
-git clone https://github.com/GresCea/Tugas-PBKK-2.git
+git clone https://github.com/GresCea/Tugas-PBKK-3.git
 composer install
 npm install
 copy .env.example .env
